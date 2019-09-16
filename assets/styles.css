@@ -12,10 +12,10 @@
 #calc-head{
 	font-family: Arial;
 	font-weight: bold;
-	text-decoration: underline;
 	color: white;
-	text-align: center;
-	padding-bottom: 40px;
+	text-align: left;
+	border-bottom: 1px solid #aaa;
+	margin-bottom: 40px;
 }
 
 /*
@@ -73,7 +73,7 @@ https://www.w3schools.com/howto/howto_css_animate_buttons.asp
 }
 
 .input-btn:hover {
-	background-color: #4b4e4f
+	background-color: #4b4e4f;
 }
 
 .input-btn:active {
