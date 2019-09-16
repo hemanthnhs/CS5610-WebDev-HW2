@@ -5,22 +5,35 @@
 	//previous state
 	var p_state;
 	var operation;
+	var lastPerformed;
 	//display panel js object
 	var display;
+	var actionEnum = {
+	  NUM: 1,
+	  ADD: 2,
+	  OTHER: 3,
+	};
 
 	function updateDisplay(operationPerformed = true) {
 		display.value = d_state
 		if (operationPerformed) {
 			//resetting decimal type
 			decimal_type = false
+			display.value = ""
 		}
 	}
 
 	function numClick() {
 		var presVal = this.value
+		if (lastPerformed == actionEnum.ADD) {
+			p_state = d_state
+			d_state = 0
+		}
 		if (presVal == ".") {
-			decimal_type = true
-			d_state = String(d_state)+presVal
+			if (!decimal_type) {
+				decimal_type = true
+				d_state = String(d_state)+presVal
+			}
 		}
 		else if (d_state != 0 || decimal_type) {
 			d_state = String(d_state)+presVal
@@ -29,11 +42,13 @@
 			d_state = presVal
 		}
 		updateDisplay(false)
+		lastPerformed = actionEnum.NUM
 	}
 
 	function clearPanel() {
 		d_state = 0
 		updateDisplay()
+		display.value = 0
 	}
 
 	function operationClicked() {
@@ -45,15 +60,21 @@
 				updateDisplay()
 			}
 			else {
+				lastPerformed = actionEnum.ADD
 				d_state = eval(p_state+operation+d_state)
-				operation = undefined
+				operation = "+"
+				p_state = 0
 				updateDisplay()
+				display.value = d_state
 			}
 		}
 		else{
-			p_state = d_state
 			operation = this.value
-			d_state = 0
+			if (lastPerformed != actionEnum.OTHER){
+				p_state = d_state
+				d_state = 0
+			}
+			lastPerformed = actionEnum.OTHER
 			updateDisplay()
 		}
 	}
@@ -61,6 +82,7 @@
 	function buttonsInitialize() {
 		d_state = 0
 		decimal_type = false
+		lastClickedOperation = false
 		display = document.getElementById('display')
 		display.value = d_state
 		var numBtns  = document.querySelectorAll(".num-btn")

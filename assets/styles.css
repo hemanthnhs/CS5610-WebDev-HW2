@@ -1,0 +1,81 @@
+#calculator{
+	border: 4px solid grey;
+	width: 330px;
+	height: 420px;
+	padding: 40px 40px 20px 40px;
+	margin-top: 40px;
+	margin-left: 40px;
+}
+
+#calc-head{
+	font-family: Arial;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #6b6f70;
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+/*
+Background color for disabled field : https://stackoverflow.com/questions/1537711/whats-the-css-style-i-need-to-make-a-readonly-textbox-control-look-disabled
+ */
+
+#display{
+	height: 50px;
+	width: 100%;
+	text-align: right;
+	font-size: xx-large;
+	margin-bottom: 30px;
+	background-color: #F0F0F0;
+	color: black;
+}
+
+#button-inputs{
+	height: 65%
+}
+
+#button-inputs tbody{
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+#button-inputs table{
+	width: 100%;
+	height: 100%;
+}
+
+#button-inputs table tbody tr{
+	width: 100%;
+	height: 23%
+}
+
+#button-inputs table tbody tr th{
+	width: 23%;
+}
+
+/*
+Referenced https://www.w3schools.com/css/css3_buttons.asp for Button design
+https://www.w3schools.com/howto/howto_css_animate_buttons.asp
+ */
+
+.input-btn{
+	font-size: 22px;
+	background-color: #6b6f70;
+	color: white;
+	border: none;
+	width: 100%;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.input-btn:hover {
+	background-color: #4b4e4f
+}
+
+.input-btn:active {
+  transform: translateY(1px);
+}
+
+.input-btn:focus {outline:0;}
+
