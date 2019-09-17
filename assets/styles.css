@@ -5,7 +5,7 @@
 	width: 330px;
 	height: 420px;
 	padding: 40px 40px 20px 40px;
-	margin-top: 40px;
+	margin-top: 20px;
 	margin-left: 40px;
 }
 
@@ -19,7 +19,7 @@
 }
 
 /*
-Background color for disabled field : https://stackoverflow.com/questions/1537711/whats-the-css-style-i-need-to-make-a-readonly-textbox-control-look-disabled
+Attribution: Background color for disabled field : https://stackoverflow.com/questions/1537711/whats-the-css-style-i-need-to-make-a-readonly-textbox-control-look-disabled
  */
 
 #display{

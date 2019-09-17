@@ -61,24 +61,39 @@
 			}
 			else {
 				lastPerformed = actionEnum.ADD
-				d_state = eval(p_state+operation+d_state)
+				d_state = eval(p_state+operation+"("+d_state+")")
 				operation = "+"
 				p_state = 0
+				if (!isFinite(d_state)) {
+					d_state = "UNDEFINED"
+				}
 				updateDisplay()
 				display.value = d_state
 			}
 		}
 		else{
-			operation = this.value
-			if (lastPerformed != actionEnum.OTHER){
-				p_state = d_state
-				d_state = 0
+			if (this.value == "-" && (lastPerformed != actionEnum.NUM || d_state == 0)) {
+				d_state = this.value
+				updateDisplay(false)
+			}
+			else{
+				if (p_state != null && operation != "+") {
+					d_state = eval(p_state+operation+"("+d_state+")")
+				}
+				operation = this.value
+				if (lastPerformed != actionEnum.OTHER){
+					p_state = d_state
+					d_state = 0
+					updateDisplay()
+				}
 			}
 			lastPerformed = actionEnum.OTHER
-			updateDisplay()
 		}
 	}
 
+	/* Attribution : Initialize all elements after load concept from lecture notes
+	   http://ccs.neu.edu/home/ntuck/courses/2019/09/cs5610/notes/02-browsers/page/code2.js
+	 */
 	function buttonsInitialize() {
 		d_state = 0
 		decimal_type = false
