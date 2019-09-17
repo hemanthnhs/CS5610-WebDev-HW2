@@ -78,6 +78,12 @@
 				if (calculatorObj.p_state == "UNDEFINED") {
 					calculatorObj.p_state = 0;
 				}
+				if (calculatorObj.d_state == "UNDEFINED") {
+					calculatorObj.d_state = 0;
+				}
+				if (calculatorObj.d_state == "-") {
+					calculatorObj.d_state = 0;
+				}
 				// adding ( ) to handle negative operations
 				calculatorObj.d_state = eval(calculatorObj.p_state+calculatorObj.operation+"("+calculatorObj.d_state+")")
 				calculatorObj.operation = "+"
@@ -99,7 +105,13 @@
 			else{
 				if (calculatorObj.p_state != null && calculatorObj.operation != "+") {
 					if (calculatorObj.p_state == "UNDEFINED") {
-					calculatorObj.p_state = 0;
+						calculatorObj.p_state = 0;
+					}
+					if (calculatorObj.d_state == "UNDEFINED") {
+						calculatorObj.d_state = 0;
+					}
+					if (calculatorObj.d_state == "-") {
+						calculatorObj.d_state = 0;
 					}
 					// for consectuive operations before +=
 					calculatorObj.d_state = eval(calculatorObj.p_state+calculatorObj.operation+"("+calculatorObj.d_state+")")
