@@ -75,6 +75,9 @@
 			else {
 				// = operation and making + for next operation
 				calculatorObj.lastPerformed = calculatorObj.actionEnum.ADD
+				if (calculatorObj.p_state == "UNDEFINED") {
+					calculatorObj.p_state = 0;
+				}
 				// adding ( ) to handle negative operations
 				calculatorObj.d_state = eval(calculatorObj.p_state+calculatorObj.operation+"("+calculatorObj.d_state+")")
 				calculatorObj.operation = "+"
@@ -88,13 +91,16 @@
 			}
 		}
 		else{
-			if (this.value == "-" && (calculatorObj.lastPerformed != calculatorObj.actionEnum.NUM || calculatorObj.d_state == 0)) {
+			if (this.value == "-" && (calculatorObj.lastPerformed == calculatorObj.actionEnum.OTHER || calculatorObj.d_state == 0)) {
 				// for negative number operations
 				calculatorObj.d_state = this.value
 				calculatorObj.updateDisplay(false)
 			}
 			else{
 				if (calculatorObj.p_state != null && calculatorObj.operation != "+") {
+					if (calculatorObj.p_state == "UNDEFINED") {
+					calculatorObj.p_state = 0;
+					}
 					// for consectuive operations before +=
 					calculatorObj.d_state = eval(calculatorObj.p_state+calculatorObj.operation+"("+calculatorObj.d_state+")")
 				}

@@ -8,17 +8,17 @@ The second application is a four-function calculator application with multifunct
 
 The webpage is available at hw02.cs5610f19.website
 
-## Four-function Calculator Design-Decisions :
+## Four-function Calculator Design-Decisions and Usage Document :
 
 The application supports decimal point operations and operations on negative numbers.
 
-Consecutive operations are executed sequential order i.e 1 + 2 * 3 will be (1 + 2) * 3 i.e in the order of inputs entered.
-
 Not finite numbers like Infinity, NaN are displayed as UNDEFINED in the calculator
 
-Design decision for any arithmetic operator followed by - (minus) was made to handle as a negative number so to undo, the calculator clear must be used.
+Consecutive operations are executed sequential order i.e 1 + 2 * 3 will be (1 + 2) * 3 i.e in the order of inputs entered.
 
 Consecutive operator inputs i.e * followed by / will be overidden by the latest operator entered. (Unless - where its treated as neg)
+
+Design decision for any arithmetic operator except (+=) followed by - (minus) was made to handle as a negative number so to undo, the calculator clear must be used. Where as for += the - (minus) operator represents a subtract operation. To enter a negative number (from scratch operation) after +=, clear option must be used ( Using two - will result a  result - (negative number)).
 
 ## Attributions : 
 Image of Polar Bear from wikepedia
