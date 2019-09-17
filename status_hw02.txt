@@ -11,13 +11,13 @@ hw02.cs5610f19.website
 https://github.com/hemanthnhs/CS5610-WebDev-HW2
 
 4. How many HTML / CSS tutorial exercises did you do?
-
+30
 
 5. How comfortable do you feel with HTML and CSS now?
 Totally comfortable
 
 6. How many JS tutorial exercises did you do?
-
+15
 
 7. How comfortable do you feel with JS now?
 Totally comfortable
@@ -29,7 +29,7 @@ Yes
 
 9. Which parts of this assignment did you have trouble with, if any?
 Multifunction button +=
-
+Anonymous functions
 
 
 
