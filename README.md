@@ -30,3 +30,5 @@ Selector concepts understanding - https://www.w3schools.com/cssref/css_selectors
 Referenced W3 schools for button design
 - https://www.w3schools.com/css/css3_buttons.asp for 
 - https://www.w3schools.com/howto/howto_css_animate_buttons.asp
+Documentation standards followed from :
+https://gomakethings.com/whats-the-best-way-to-document-javascript/
