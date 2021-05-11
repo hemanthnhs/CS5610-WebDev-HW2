@@ -1,12 +1,10 @@
-# CS5610-WebDev-HW2
+# Calculator
 
 ## Details :
 
 This is a web application developed as a part of coursework of CS5610 Web Development. The application consists of 2 pages, one with HTML and CSS knowledge demonstration by having a page about Animal and the attribution.
 
 The second application is a four-function calculator application with multifunction += button and supports negative numbers as well.
-
-The webpage is available at hw02.cs5610f19.website
 
 ## Four-function Calculator Design-Decisions and Usage Document :
 
